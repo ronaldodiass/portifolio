@@ -1,0 +1,1 @@
+ O objetivo deste portfólio é apresentar, por meio da realidade digital, os conhecimentos e ideias que adquiri ao longo da minha trajetória e, assim, demonstrar a minha capacidade de enfrentar os desafios digitais do futuro.
