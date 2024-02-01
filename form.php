@@ -1,21 +1,33 @@
 <?php
 
-     $nome = addslashes($_POST['nome']);
-     $email = addslashes($_POST['email']);
-     $celular = addslashes($_POST['celular']);
-     $mensagem = addslashes($_POST['mensagem']);
+$nome = addslashes($_POST['nome']);
+$email = addslashes($_POST['email']);
+$celular = addslashes($_POST['celular']);
+$mensagem = addslashes($_POST['mensagem']);
+$data_atual = date('d/m/Y');
+$hora_atual = date('H:i:s');
 
-     $send = "ronaldo_benedito@hotmail.com";
-     $assunto = "Coleta de Dados - Portifólio"
+$server = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'formulario';
 
-     $content = "Nome: ".$nome."\n"."Email: ".email."\n"."Telefone: ".$telefone."\n"."Mensagem: ".$mensagem;
+$conn = new mysqli($server, $user, $password, $database);
 
-     $header = "From: ronaldo_benedito@hotmail.com"."\n"."Reply-to: ".$email."\n"."X=Mailer:PHP/".phpversion();
+if($conn->connect_error){
+     die('Falha ao se comunicar com o banco de dados: '.$conn->connect_error);
+}
 
-     if(mail($send,$content,$content,$header)){
-          echo("Mensagem enviada com sucesso!");           
-     } else{
-          echo("Houve um erro ao enviar sua mensagem.");
-     }
+$smtp = $conn->prepare("INSERT INTO mensagens (nome, email, celular, mensagem, data, hora) VALUES (?,?,?,?,?,?)");
+$smtp->bind_param("ssssss",$nome, $email, $celular, $mensagem, $data_atual, $hora_atual);
+
+if($smtp->execute()){
+     echo "Mensagem enviada com sucesso!";
+}else{
+     echo "Erro no envio da mensagem".$smtp->error;
+}
+
+$smtp->close();
+$conn->close();
 
 ?>
