@@ -1,9 +1,9 @@
 <?php
 
-$nome = addslashes($_POST['nome']);
-$email = addslashes($_POST['email']);
-$celular = addslashes($_POST['celular']);
-$mensagem = addslashes($_POST['mensagem']);
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$celular = $_POST['celular'];
+$mensagem = $_POST['mensagem'];
 $data_atual = date('d/m/Y');
 $hora_atual = date('H:i:s');
 
