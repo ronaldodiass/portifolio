@@ -163,12 +163,17 @@
       <div class="interface">
         <h2 class="titulo">FALE <span>COMIGO.</span></h2>
 
-        <form action="form.php" method="post">
+        <form action="ronaldo_benedito@hotmail.com" method="POST">
           <input type="text" name="nome" id="nome" placeholder="Seu nome completo: " required>
           <input type="text" name="email" id="email" placeholder="Seu email: " required>
           <input type="text" name="celular" id="celular" placeholder="Seu celular: ">
           <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem" required></textarea>
+
           <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+          
+          <input type="hidden" name="_subject" value="Novo Contato!">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
         </form>
       </div><!--INTERFACE-->
     </section><!--FORMULARIO-->
