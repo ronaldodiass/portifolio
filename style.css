@@ -342,7 +342,7 @@ form {
      margin-top: 40px;
 }
 
-form input, form textarea {
+form input, form textarea, button {
      width: 100%;
      background-color: rgb(36, 36, 36);
      border: none;
@@ -359,12 +359,12 @@ form textarea {
      min-height: 200px;
 }
 
-form .btn-enviar {
-     margin: 20px;
+button {
+     margin: 20px auto;
      text-align: center;
 }
 
-form .btn-enviar input {
+button {
      width: 120px;
      background-color: #FDCC37;
      color: black;
