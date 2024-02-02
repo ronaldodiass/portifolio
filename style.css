@@ -342,16 +342,27 @@ form {
      margin-top: 40px;
 }
 
-form input, form textarea, button {
+form input, form textarea {
      width: 100%;
      background-color: rgb(36, 36, 36);
-     border: none;
      outline: 0;
      padding: 20px 15px;
      border-radius: 15px;
+     border: 0.125rem solid transparent;
      color: white;
      font-size: 18px;
+     transition: border-color .2s, box-shadow .2s;
 }
+
+input:hover, 
+textarea:hover, 
+input:focus, 
+textarea:focus {
+     outline: none;
+     border-color: #FDCC37;
+     box-shadow: rgba(0, 0, 0, 0.3125 #26344a);
+}
+
 
 form textarea {
      resize: none;
@@ -359,19 +370,22 @@ form textarea {
      min-height: 200px;
 }
 
-button {
-     margin: 20px auto;
+form .btn-enviar {
+     margin: 20px;
      text-align: center;
 }
 
-button {
-     width: 120px;
-     background-color: #FDCC37;
-     color: black;
+form button {
+     padding: 15px 30px;
+     font-size: 20px;
      font-weight: 700;
+     background-color: #FDCC37;
+     border: 0;
+     border-radius: 15px;
      cursor: pointer;
      transition: .2s;
 }
+
 
 /* RODAPÉ */
 
